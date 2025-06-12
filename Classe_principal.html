@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pedido Especial</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #000000;
+      text-align: center;
+      margin: 0;
+      padding: 50px;
+    }
+
+    h1 {
+      color: #c2185b;
+      font-size: 3rem;
+    }
+
+    .btn {
+      padding: 15px 30px;   
+      font-size: 1.2rem;
+      margin: 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+
+    }
+
+    #yesBtn {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    #noBtn {
+      background-color: #f44336;
+      color: white;
+      position: absolute;
+    }
+
+    #mensagem {
+      margin-top: 40px;
+      font-size: 2rem;
+      color: #ffffff;
+      border-color: #c2185b;
+      border-radius: 10px;
+      border-style: solid ;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Quer casar comigo?</h1>
+
+  <button class="btn" id="yesBtn">Sim</button>
+  <button class="btn" id="noBtn">Não</button>
+
+  <div id="mensagem"></div>
+
+  <script>
+    const btnNao = document.getElementById("noBtn");
+    const btnSim = document.getElementById("yesBtn");
+    const msg = document.getElementById("mensagem");
+
+    // Mensagem quando clica em "Sim"
+    btnSim.addEventListener("click", () => {
+      msg.textContent = "Ainda bem que você escolheu essa opção por livre e espontânea vontade meu amor 😁🫶";
+    });
+
+    // Faz o botão "Não" fugir
+    btnNao.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - btnNao.offsetWidth);
+      const y = Math.random() * (window.innerHeight - btnNao.offsetHeight);
+      btnNao.style.left = `${x}px`;
+      btnNao.style.top = `${y}px`;
+    });
+  </script>
+
+</body>
+</html>
